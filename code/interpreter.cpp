@@ -1,60 +1,21 @@
-#include <fstream>
-#include <iostream>
-#include <math.h>
-#include <string>
-#include <unordered_map>
-#include <vector>
-class InvalidLabel : public std::exception {
-public:
-  char *what() {
-    char const *str = "Exception: Label not found!";
-    return (char *)str; 
-  }
-};
+#include "headers/interpreter.hpp"
+#include "headers/exceptions.hpp"
 
-class InvalidSymbol : public std::exception {
-public:
-  char *what() { 
-    char const *str = "Exception: Symbol not found!";
-    return (char *)str; 
-  }
-};
-
-using namespace std;
 // Our data memory has to store 10 digits value thus the long long declaration
 long long DATA_MEM[1000];
 // Also Instruction are signed 10 digits
 long long CODE_MEM[1000];
-// Symbol table used for mapping the numeric symbols (keys) to the address (an
-// index of our Data Memory array) where the data corresponding to the symbol is
-// stored
+// Symbol table used for mapping the numeric symbols (keys) to the address (an index of our Data Memory array) where the data corresponding to the symbol is stored
 unordered_map<int, int> symbolTable;
-// Label table used for mapping the numeric Labels (keys) to the address (an
-// index of Code Memory array) where the labeled instruction is stored
+// Label table used for mapping the numeric Labels (keys) to the address (an index of Code Memory array) where the labeled instruction is stored
 unordered_map<int, int> labelTable;
 // Initially the Instruction pointer points to the first cell of CODE_MEM
-
-unordered_map<int, int> tableMinusZero;
+unordered_map<int, int> literalTable;
 vector<int> symbolRunTime;
 
 int IP = 0;
-
-int SP = 002;
-int EP = 003;
-int temp1 = 004;
-int temp2 = 005;
-int temp3 = 006;
-int temp4 = 007;
-int temp_return = 8;
-
-// This is the layout of an instruction opcode(signed int: sign + digit)
-// operand1 & 2& 3 (0-999:3 digits)
-typedef struct {
-  int opcode;
-  int operand1;
-  int operand2;
-  int operand3;
-} Instruction;
+// To avoid name confution and I is added at the SP variable signifying interpreter
+const int SP = 002;
 
 // Function to insert values into the data memory and returns the index of the
 // last free cell after insertion
@@ -108,7 +69,7 @@ long long changeOperand(long long instruction, int newOperand,
 
 // Function calls changeOperand function to substitute only symbols by their
 // actual data addresses and returns the new instruction
-long long processInstructionForSymbolTable(long long instruction) {
+long long processInstructionForsymbolTable(long long instruction) {
   Instruction ins = decodeInstruction(instruction);
   switch (ins.opcode) {
   // if the instruction is an assignment
@@ -194,7 +155,7 @@ long long processInstructionForSymbolTable(long long instruction) {
 // Function calls changeOperand function to substitute Labels only by their
 // actual code address and returns the new instruction to be decoded and
 // executed
-long long processInstructionForLabelTable(long long instruction) {
+long long processInstructionForlabelTable(long long instruction) {
   Instruction ins = decodeInstruction(instruction);
   switch (ins.opcode) {
   // if the instruction uses Jump which needs one Label, in 3rd operand
@@ -300,7 +261,7 @@ void executeInstruction(Instruction ins) {
     cout << DATA_MEM[ins.operand1] << "\n";
     break;
   case -9:
-    DATA_MEM[symbolTable[ins.operand1]] = tableMinusZero[IP - 1];
+    DATA_MEM[symbolTable[ins.operand1]] = literalTable[IP - 1];
     break;
     // The other cases are handled seperately, namely +9,+8,-7.
   }
@@ -311,8 +272,8 @@ void executeReadInstruction(Instruction ins, long long input) {
   DATA_MEM[ins.operand3] = input;
 }
 
-int main() {
-  // initiliaze the symbol table to contain constant 0, 1,
+int interpretCode() {
+    // initiliaze the symbol table to contain constant 0, 1,
   // SP,EP,temp1,temp2,temp3,temp_return,picker row,picker column
   for (int i = 0; i <= 8; i++) {
     symbolTable[i] = i;
@@ -378,7 +339,7 @@ int main() {
                             ins2.operand1 * pow(10, 6) +
                             ins2.operand2 * pow(10, 3) + ins2.operand3);
           input_file >> number;
-          tableMinusZero[lastProgramMemoryCell] = number;
+          literalTable[lastProgramMemoryCell] = number;
           ++fileLine;
         }
         ++fileLine;
@@ -393,7 +354,7 @@ int main() {
                             ins.operand1 * pow(10, 6) +
                             ins.operand2 * pow(10, 3) + ins.operand3);
         input_file >> number;
-        tableMinusZero[lastProgramMemoryCell] = number;
+        literalTable[lastProgramMemoryCell] = number;
         ++fileLine;
       }
       // We substitute the symbols by actual data addresses
@@ -411,7 +372,7 @@ int main() {
   for (int i = 0; i < lastProgramMemoryCell; i++) {
     long long processedInstruction;
     try {
-      processedInstruction = processInstructionForLabelTable(TEMP_CODE[i]);
+      processedInstruction = processInstructionForlabelTable(TEMP_CODE[i]);
     } catch (InvalidLabel &e) {
       cerr << "File line: " << fileLineInstructionMapping[i] << " -- "
            << e.what() << endl;
@@ -426,7 +387,7 @@ int main() {
     // Fetching
     long long instruction = CODE_MEM[IP];
     IP++;
-    instruction=processInstructionForSymbolTable(instruction);
+    instruction=processInstructionForsymbolTable(instruction);
     // Decoding
     
     Instruction ins = decodeInstruction(instruction);
@@ -445,19 +406,6 @@ int main() {
       executeInstruction(ins);
     }
   }
-
-  /*
-  cout << "symbolTable\n";
-  for (auto i : symbolTable) cout << i.first << "    " << i.second << endl;
-  cout<<"DATA_MEM[i]"<<"\n"; 
-  for(int i=0;i<5;i++) cout<<DATA_MEM[i]<<"\n";
-  cout << "labelTable\n";
-  for (auto i : labelTable) cout << i.first << "    " << i.second << endl;
-  cout<<"CODE_MEM[i]"<<"\n";
-  for(int i=0;i<5;i++) cout<<CODE_MEM[i]<<"\n";
-  cout<<"tableMinusZero[i]"<<"\n"; 
-  for(int i=0;i<2;i++) cout<<tableMinusZero[i]<<"\n";
   input_file.close();
-  */
   return 0;
 }
