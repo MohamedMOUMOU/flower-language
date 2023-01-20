@@ -1,0 +1,14 @@
+buildworld
+makeEmptyWorld(9,7)
+worldbuilt
+int visited[2][2];
+start() {
+    visited[0][0] = 36;
+    visited[0][1] = 8;
+    int a;
+    a = visited[0][0] * 2 + 8 - 4 * 2;
+    int b;
+    b = visited[0][1] * 2 + 8 - 4;
+    write(a);
+    write(b);
+}

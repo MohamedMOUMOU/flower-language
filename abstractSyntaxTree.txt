@@ -1,0 +1,43 @@
+CODE - EMPTYWORLD - PARAMS - 0
+                           - 0
+     - PROGRAM - FUNCTION - INT
+                          - func1
+                          - PARAMSWITHTYPES
+                          - STATEMENTS - RETURN - 56
+               - FUNCTION - INT
+                          - func2
+                          - PARAMSWITHTYPES
+                          - STATEMENTS - RETURN - 3
+               - STARTFUNCTION - STATEMENTS - DECLARATION - a
+                                            - ASSIGNMENT - a
+                                                         - 36
+                                            - ASSIGNMENT - a
+                                                         - FUNCTIONCALL - func1
+                                                                        - PARAMS
+                                            - FUNCTIONCALL - write
+                                                           - PARAMS - a
+                                            - DECLARATION - b
+                                            - ASSIGNMENT - b
+                                                         - 2
+                                            - FUNCTIONCALL - write
+                                                           - PARAMS - b
+                                            - DECLARATION - c
+                                            - ASSIGNMENT - c
+                                                         - FUNCTIONCALL - func2
+                                                                        - PARAMS
+                                            - ASSIGNMENT - c
+                                                         - + - c
+                                                             - - - 4
+                                                                 - * - 3
+                                                                     - - - 2
+                                                                         - 9
+                                            - FUNCTIONCALL - write
+                                                           - PARAMS - c
+                                            - DECLARATION - d
+                                            - ASSIGNMENT - d
+                                                         - + - a
+                                                             - + - b
+                                                                 - + - c
+                                                                     - d
+                                            - FUNCTIONCALL - write
+                                                           - PARAMS - d
