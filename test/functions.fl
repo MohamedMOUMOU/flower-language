@@ -1,0 +1,23 @@
+buildworld
+makeEmptyWorld(0,0)
+worldbuilt
+func int func1() {
+    return 9;
+}
+func int func2() {
+    int a;
+    a = 2;
+    if(a == 3) {
+        return 3;
+    }
+    return a;
+}
+start() {
+    int result1;
+    int result2;
+    result1 = func1();
+    result2 = func2();
+    int result;
+    result = result1 + result2;
+    write(result);
+}

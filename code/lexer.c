@@ -563,12 +563,10 @@ struct token  initfunctions= {35, "INITFUNCTIONS"};
 	//This function also prints to a file from which we will feed the parser the sequence of tokens of the code with information about:line number, token name and its value
 void result(struct token tokenName, bool printValue){
 	if(!flag){
-		printf("\n");
 		fprintf(outputD, "\n");
 	}
 	if(printValue) fprintf(outputD, "%d %d %s %s", line_number, tokenName.num, tokenName.name, yytext);
 	else fprintf(outputD, "%d %d %s", line_number, tokenName.num, tokenName.name);
-	printf("Line %d Token %d: %s", line_number, tokenName.num, yytext);
 	flag = 0;
 }
 // We defined names to the tokens' regular expressions,opertors and punctuation for readability and it is to be used in rules section

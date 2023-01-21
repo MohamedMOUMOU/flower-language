@@ -2,8 +2,11 @@
 #define OUTPUT_H
 
 #include <iostream>
+
 #include <fstream>
+
 #include <iomanip>
+
 #include "types.hpp"
 
 using namespace std;
@@ -12,7 +15,7 @@ using namespace std;
 string spaces();
 void generationOutput();
 void printSymbolTable();
-void stdoAndFileOutput(node*, node*);
+void stdOAndFileOutput(node * , node * );
 
 extern vector < string > DATASECTION;
 extern vector < string > CODESECTION;

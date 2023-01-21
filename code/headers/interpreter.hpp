@@ -2,10 +2,15 @@
 #define INTERPRETER_H
 
 #include <iostream>
+
 #include <fstream>
+
 #include <vector>
+
 #include <math.h>
+
 #include <string>
+
 #include <unordered_map>
 
 using namespace std;
@@ -17,7 +22,8 @@ typedef struct {
   int operand1;
   int operand2;
   int operand3;
-} Instruction;
+}
+Instruction;
 
 // Interpretation Functions
 int interpretCode();

@@ -1,0 +1,73 @@
+CODE - WORLDINITIALIZATION - BUILDWORLD
+                           - EMPTYWORLD
+                           - LPAR
+                           - PARAMSWITHOUTTYPES - OTHERPARAMSWITHOUTTYPES - NUMIDFUNC - NUM
+                                                                          - COMMA
+                                                                          - OTHERPARAMSWITHOUTTYPES - NUMIDFUNC - NUM
+                                                                                                    - RPAR
+                           - INITIALIZATION
+                           - WORLDBUILT
+     - PROGRAM - STARTFUNCTION - START
+                               - LPAR
+                               - RPAR
+                               - LCBR
+                               - STATEMENTS - STATEMENT - DECLARATION - INT
+                                                                      - ID
+                                                                      - NUMLOCATORS - LSQB
+                                                                                    - NUM
+                                                                                    - RSQB
+                                                                                    - LSQB
+                                                                                    - NUM
+                                                                                    - RSQB
+                                                                      - SEMICOLON
+                                            - STATEMENT - ID
+                                                        - ASSIGNORFCTCALLWITHOUTID - ASSIGNMENTWITHOUTID - LOCATORS - LSQB
+                                                                                                                    - NUMID - NUM
+                                                                                                                    - RSQB
+                                                                                                                    - LSQB
+                                                                                                                    - NUMID - NUM
+                                                                                                                    - RSQB
+                                                                                                         - ASSIGNMENT
+                                                                                                         - EXPR - TERM - FACTOR - NUMID - NUM
+                                                        - SEMICOLON
+                                            - STATEMENT - ID
+                                                        - ASSIGNORFCTCALLWITHOUTID - ASSIGNMENTWITHOUTID - LOCATORS - LSQB
+                                                                                                                    - NUMID - NUM
+                                                                                                                    - RSQB
+                                                                                                                    - LSQB
+                                                                                                                    - NUMID - NUM
+                                                                                                                    - RSQB
+                                                                                                         - ASSIGNMENT
+                                                                                                         - EXPR - TERM - FACTOR - NUMID - NUM
+                                                        - SEMICOLON
+                                            - STATEMENT - DECLARATION - INT
+                                                                      - ID
+                                                                      - SEMICOLON
+                                            - STATEMENT - ID
+                                                        - ASSIGNORFCTCALLWITHOUTID - ASSIGNMENTWITHOUTID - ASSIGNMENT
+                                                                                                         - EXPR - TERM - FACTOR - LPAR
+                                                                                                                                - EXPR - TERM - FACTOR - NUMID - ID
+                                                                                                                                                               - LOCATORS - LSQB
+                                                                                                                                                                          - NUMID - NUM
+                                                                                                                                                                          - RSQB
+                                                                                                                                                                          - LSQB
+                                                                                                                                                                          - NUMID - NUM
+                                                                                                                                                                          - RSQB
+                                                                                                                                       - PLUSMINUS
+                                                                                                                                       - EXPR - TERM - FACTOR - NUMID - ID
+                                                                                                                                                                      - LOCATORS - LSQB
+                                                                                                                                                                                 - NUMID - NUM
+                                                                                                                                                                                 - RSQB
+                                                                                                                                                                                 - LSQB
+                                                                                                                                                                                 - NUMID - NUM
+                                                                                                                                                                                 - RSQB
+                                                                                                                                - RPAR
+                                                                                                                       - TIMESDIVIDE
+                                                                                                                       - TERM - FACTOR - NUMID - NUM
+                                                        - SEMICOLON
+                                            - STATEMENT - BUILTINFUNCTIONCALL - BUILTIN
+                                                                              - LPAR
+                                                                              - PARAMSWITHOUTTYPES - OTHERPARAMSWITHOUTTYPES - NUMIDFUNC - ID
+                                                                                                                             - RPAR
+                                                        - SEMICOLON
+                               - RCBR

@@ -1,0 +1,8 @@
+buildworld
+makeEmptyWorld(0,0)
+worldbuilt
+start() {
+    int a;
+    a = 9;
+    write(a);
+}

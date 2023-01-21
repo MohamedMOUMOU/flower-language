@@ -2,38 +2,37 @@
 #define EXCEPTIONS_H
 
 #include <string>
+
 using namespace std;
 
 // Exceptions
 class expectedToken: public std::exception {
-    private: string message;
+  private: string message;
 
-    public: expectedToken(string);
-    string what();
+  public: expectedToken(string);
+  string what();
 };
 
 class catchableExpectedToken: public std::exception {
-    private: string message;
+  private: string message;
 
-    public: catchableExpectedToken(string);
-    string what();
+  public: catchableExpectedToken(string);
+  string what();
 };
 
 class staticSemanticsException: public std::exception {
-    private: string message;
+  private: string message;
 
-    public: staticSemanticsException(string);
-    string what();
+  public: staticSemanticsException(string);
+  string what();
 };
 
-class InvalidLabel : public std::exception {
-public:
-  char *what();
+class InvalidLabel: public std::exception {
+  public: char * what();
 };
 
-class InvalidSymbol : public std::exception {
-public:
-  char *what();
+class InvalidSymbol: public std::exception {
+  public: char * what();
 };
 
 // Error printing functions

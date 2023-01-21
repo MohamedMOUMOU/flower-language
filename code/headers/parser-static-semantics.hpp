@@ -2,14 +2,17 @@
 #define PARSER_STATIC_SEMATICS_H
 
 #include <iostream>
+
 #include <fstream>
+
 #include "types.hpp"
+
 #include "enums.hpp"
 
 using namespace std;
 
 // Parsing functions
-vector <node *> parseAndStaticSemantics();
+vector < node * > parseAndStaticSemantics();
 void worldInitialization(node * parent, node * parentAST, int optionality);
 void initialization(node * parent, node * parentAST, int optionality);
 void initFunctions(node * parent, node * parentAST, int optionality);

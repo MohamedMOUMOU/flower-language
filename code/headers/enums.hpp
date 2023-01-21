@@ -2,148 +2,149 @@
 #define ENUMS_H
 
 #include <string>
+
 #include <vector>
 
 // Declaring string vecrors for each terminal in our grammar
 const vector < string > NUM = {
-    "NUM",
-    "number"
+  "NUM",
+  "number"
 };
 const vector < string > PICKER = {
-    "PICKER",
-    "PICKER"
+  "PICKER",
+  "PICKER"
 };
 const vector < string > ELSE = {
-    "ELSE",
-    "else"
+  "ELSE",
+  "else"
 };
 const vector < string > LCBR = {
-    "LCBR",
-    "{"
+  "LCBR",
+  "{"
 };
 const vector < string > RCBR = {
-    "RCBR",
-    "}"
+  "RCBR",
+  "}"
 };
 const vector < string > LSQB = {
-    "LSQB",
-    "["
+  "LSQB",
+  "["
 };
 const vector < string > RSQB = {
-    "RSQB",
-    "]"
+  "RSQB",
+  "]"
 };
 const vector < string > BUILTIN = {
-    "BUILTIN",
-    "buil-tin function"
+  "BUILTIN",
+  "buil-tin function"
 };
 const vector < string > LPAR = {
-    "LPAR",
-    "("
+  "LPAR",
+  "("
 };
 const vector < string > RPAR = {
-    "RPAR",
-    ")"
+  "RPAR",
+  ")"
 };
 const vector < string > INT = {
-    "INT",
-    "integer"
+  "INT",
+  "integer"
 };
 const vector < string > ID = {
-    "ID",
-    "identifier"
+  "ID",
+  "identifier"
 };
 const vector < string > ELIF = {
-    "ELIF",
-    "elif"
+  "ELIF",
+  "elif"
 };
 const vector < string > IF = {
-    "IF",
-    "if"
+  "IF",
+  "if"
 };
 const vector < string > ASSIGNMENT = {
-    "ASSIGNMENT",
-    "="
+  "ASSIGNMENT",
+  "="
 };
 const vector < string > PLUSMINUS = {
-    "PLUSMINUS",
-    "+ or -"
+  "PLUSMINUS",
+  "+ or -"
 };
 const vector < string > TIMESDIVIDE = {
-    "TIMESDIVIDE",
-    "* or /"
+  "TIMESDIVIDE",
+  "* or /"
 };
 const vector < string > RELATION = {
-    "RELATION",
-    "==, >, >=, < or <="
+  "RELATION",
+  "==, >, >=, < or <="
 };
 const vector < string > NOT = {
-    "NOT",
-    "not"
+  "NOT",
+  "not"
 };
 const vector < string > OR = {
-    "OR",
-    "or"
+  "OR",
+  "or"
 };
 const vector < string > AND = {
-    "AND",
-    "and"
+  "AND",
+  "and"
 };
 const vector < string > SEMICOLON = {
-    "SEMICOLON",
-    ";"
+  "SEMICOLON",
+  ";"
 };
 const vector < string > COMMA = {
-    "COMMA",
-    ","
+  "COMMA",
+  ","
 };
 const vector < string > INITFUNC = {
-    "INITFUNCTIONS",
-    "a world initialization function"
+  "INITFUNCTIONS",
+  "a world initialization function"
 };
 const vector < string > QUESTIONMARK = {
-    "QUESTIONMARK",
-    "?"
+  "QUESTIONMARK",
+  "?"
 };
 const vector < string > RETURN = {
-    "RETURN",
-    "return"
+  "RETURN",
+  "return"
 };
 const vector < string > START = {
-    "START",
-    "start"
+  "START",
+  "start"
 };
 const vector < string > VOID = {
-    "VOID",
-    "void"
+  "VOID",
+  "void"
 };
 const vector < string > BUILDWORLD = {
-    "BUILDWORLD",
-    "buildworld"
+  "BUILDWORLD",
+  "buildworld"
 };
 const vector < string > EMPTYWORLD = {
-    "EMPTYWORLD",
-    "emptyWorld"
+  "EMPTYWORLD",
+  "emptyWorld"
 };
 const vector < string > FUNC = {
-    "FUNC",
-    "function"
+  "FUNC",
+  "function"
 };
 const vector < string > WORLDBUILT = {
-    "WORLDBUILT",
-    "worldbuilt"
+  "WORLDBUILT",
+  "worldbuilt"
 };
 const vector < string > SKIP = {
-    "SKIP",
-    "skip"
+  "SKIP",
+  "skip"
 };
 const vector < string > BREAK = {
-    "BREAK",
-    "break"
+  "BREAK",
+  "break"
 };
 const vector < string > WHILE = {
-    "WHILE",
-    "while"
+  "WHILE",
+  "while"
 };
 
 // Declaring strings corresponding to the non-terminals of our grammar

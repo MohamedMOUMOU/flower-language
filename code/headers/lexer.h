@@ -3,11 +3,11 @@
 
 #ifdef __cplusplus
 extern "C" {
-#endif
+  #endif
 
-void lex(char *);
+  void lex(char * );
 
-#ifdef __cplusplus
+  #ifdef __cplusplus
 }
 #endif
 

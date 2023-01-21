@@ -1,0 +1,19 @@
+CODE - EMPTYWORLD - PARAMS - 0
+                           - 0
+     - PROGRAM - STARTFUNCTION - STATEMENTS - DECLARATION - a - LOCATORS - 9
+                                                                         - 8
+                                            - ASSIGNMENT - a - LOCATORS - 1
+                                                                        - 7
+                                                         - 2
+                                            - ASSIGNMENT - a - LOCATORS - 3
+                                                                        - 0
+                                                         - 8
+                                            - DECLARATION - result
+                                            - ASSIGNMENT - result
+                                                         - * - + - a - LOCATORS - 1
+                                                                                - 7
+                                                                 - a - LOCATORS - 3
+                                                                                - 0
+                                                             - 2
+                                            - FUNCTIONCALL - write
+                                                           - PARAMS - result

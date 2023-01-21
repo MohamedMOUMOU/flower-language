@@ -1,0 +1,16 @@
+buildworld
+makeEmptyWorld(0,0)
+worldbuilt
+start() {
+    int a;
+    a = 0;
+    int b;
+    b = 0;
+    while(?a < 5 & b == 0? | b < 1) {
+        write(a);
+        a = a + 1;
+        if(a == 6) {
+            b = b + 1;
+        }
+    }
+}
