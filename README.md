@@ -5,7 +5,7 @@ A task-oriented programming language called flower used to write programs that d
 3. Generating simple virtual machine code
 4. Interpretation
 
-## Instructions on running code written in the flower language
+## Instructions on Running Code Written in the Flower Language
 To run code written in the flower language, you have to write the code and save it in a file. The extension of the file. does not matter, but in the test folder of this repository, we are giving the files a .fl extension. Then you can run the following command at the root directory:
 ```
 flower.exe path-of-the-file
@@ -26,7 +26,7 @@ The lexer works in the following way:
 -	The second step consists of matching the resulting lexemes to token names that we defined in the lexical description table to return tokens. In many cases, a lexeme would match one token name. However, in cases like the following, “1234;”, a single input would be matched to two token names, int, and semicolon. The lexer will start by reading the input and checking each regular expression defined sequentially, once a regular expression starts matching the input, the lexer would continue with the same regular expression until no match is further available. Then, the lexer would consider the next character a start of a new lexeme and repeats the process.
 -	As hinted above, the lexer checks lexemes against regular expressions in the way they were defined (sequentially). Therefore, the ordering of regular expressions is of high importance for the lexer to work properly.
 
-#### Lexical Description table
+#### Lexical Description Table
 TOKEN | REGULAR EXPRESSIONS	| EXAMPLE LEXEME | REMARKS
 --- | --- | --- | ---
 IF | if |	if |	Reserved for selection 
